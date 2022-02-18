@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>snw</groupId>
+    <artifactId>rfm-api</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Rfm Api</name>
+
+    <description>The API for "RunForMoney" plugin.</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.2</version>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <configuration>
+                    <altDeploymentRepository>maven.repo::default::file://${project.build.directory}/mvn-repo
+                    </altDeploymentRepository>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- Deploy the web site -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <!-- select the Maven phase in which the plugin will be executed -->
+                        <phase>deploy</phase>
+                        <configuration>
+                            <!-- Plugin configuration goes here -->
+                            <server>github</server>
+                            <!-- The commit message -->
+                            <message>Update</message>
+                            <!-- The location where the site is uploaded -->
+                            <repositoryName>mvn-repo</repositoryName> <!-- github repo name -->
+                            <repositoryOwner>SNWCreations</repositoryOwner> <!-- organization or user name  -->
+                            <!-- Use merge or override the content -->
+                            <merge>true</merge>
+                            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                            <branch>refs/heads/main</branch>
+                            <!--                        <includes>-->
+                            <!--                            <include>**/*</include>-->
+                            <!--                        </includes>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>23.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>maven.repo</id>
+            <name>Local Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-repo</url>
+        </repository>
+    </distributionManagement>
+</project>
