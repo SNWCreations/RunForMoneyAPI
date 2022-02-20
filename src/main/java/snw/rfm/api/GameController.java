@@ -24,8 +24,9 @@ public interface GameController {
     /**
      * 设置每秒增加的B币数量。
      * @param cps 每秒增加的B币数量
+     * @throws IllegalArgumentException 当尝试向此方法的实现的参数 cps 传递 0 时引发
      */
-    void setCoinPerSecond(int cps);
+    void setCoinPerSecond(int cps) throws IllegalArgumentException;
 
     /**
      * 获取每秒增加的B币数量。
@@ -36,13 +37,17 @@ public interface GameController {
     /**
      * 设置时间是否倒流。
      * @param isGameReversed 时间是否倒流
+     * @deprecated 自 v1.1.11 起可以通过向 setCoinPerSecond 方法的实现传递负值实现时间倒流。
      */
+    @Deprecated
     void setGameReversed(boolean isGameReversed);
 
     /**
      * 获取时间是否正在倒流。
      * @return 时间是否正在倒流
+     * @deprecated 自 v1.1.11 起，可以通过调用 {@link GameController#getCoinPerSecond()} 方法的实现，并判断其返回值是否为负来确定时间是否正在倒流。
      */
+    @Deprecated
     boolean isGameReversed();
 
     /**

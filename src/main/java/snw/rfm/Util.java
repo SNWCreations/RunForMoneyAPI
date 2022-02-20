@@ -10,6 +10,7 @@
 
 package snw.rfm;
 
+import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -35,6 +36,8 @@ public final class Util {
      */
     @NotNull
     public static List<String> getAllTheStringsStartingWithListInTheList(@NotNull String a, @NotNull Collection<String> b, boolean ignoreCase) {
+        Validate.notNull(a);
+        Validate.notNull(b);
         return b.stream().filter(IT -> ((ignoreCase) ? IT.toLowerCase() : IT).startsWith((ignoreCase) ? a.toLowerCase() : a)).collect(Collectors.toList());
     }
 
@@ -52,9 +55,12 @@ public final class Util {
     /**
      * Map 的降序排序。
      * @param map 将被排序的 Map
+     * @param <K> 任意值
+     * @param <V> 任意值
      * @return 一个降序排序的 Map ({@link java.util.LinkedHashMap}) 。
      */
-    public static <K, V extends Comparable<? super V>> Map<K, V> sortDescend(Map<K, V> map) {
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortDescend(@NotNull Map<K, V> map) {
+        Validate.notNull(map);
         List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
         list.sort((o1, o2) -> {
             int compare = (o1.getValue()).compareTo(o2.getValue());
@@ -75,7 +81,8 @@ public final class Util {
      * @param loc 位置字符串
      * @return 解析后的位置
      */
-    public static Location parseXYZStringIntoLocation(String loc) {
+    public static Location parseXYZStringIntoLocation(@NotNull String loc) {
+        Validate.notNull(loc);
         String[] loc_split = loc.split(" ");
         return new Location(Bukkit.getWorld("world"), Integer.parseInt(loc_split[0]), Integer.parseInt(loc_split[1]), Integer.parseInt(loc_split[2]));
     }
@@ -84,7 +91,8 @@ public final class Util {
      * 移除某玩家的所有状态效果。
      * @param player 目标玩家
      */
-    public static void removeAllPotionEffect(Player player) {
+    public static void removeAllPotionEffect(@NotNull Player player) {
+        Validate.notNull(player);
         Arrays.stream(PotionEffectType.values()).forEach(player::removePotionEffect);
     }
 }

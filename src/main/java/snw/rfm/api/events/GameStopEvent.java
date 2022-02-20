@@ -20,14 +20,16 @@ import java.util.Set;
 
 /**
  * 游戏停止事件。
+ * <p>
+ * 此事件产生时机: 游戏应该结束，但游戏进程仍未停止。
+ * <p>
+ * 此事件完成后，游戏正式结束。
  */
 public final class GameStopEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
     
     /**
      * 获取获胜者集合。
-     * <p>
-     * 其本质是 TeamHolder.getInstance().getRunners() 。
      *
      * @return 获胜者集合。
      */

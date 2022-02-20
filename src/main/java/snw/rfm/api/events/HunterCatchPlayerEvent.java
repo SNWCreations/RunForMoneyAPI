@@ -17,6 +17,10 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 猎人抓到一个玩家时触发此事件。
+ * <p>
+ * 此事件产生时机: 玩家确认被抓捕，但仍未被移出逃走队员列表。
+ * <p>
+ * 此事件完成后，玩家被淘汰。
  */
 public final class HunterCatchPlayerEvent extends Event {
     private static final HandlerList handlers = new HandlerList();

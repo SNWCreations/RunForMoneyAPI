@@ -30,9 +30,10 @@ public final class ItemRegistry {
      * <p>
      * 注意: 针对一个道具物品实例，可能有多个内部名称与其对应。
      *
+     * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
      * @throws ItemAlreadyRegisteredException 提供的内部名称或道具实例已被注册时引发
-     * @since 1.1.8
+     * @since 插件 v1.1.8
      */
     public static void registerItem(@NotNull String name, @NotNull ItemStack item) {
         throw new UnsupportedOperationException();
@@ -43,9 +44,11 @@ public final class ItemRegistry {
      * <p>
      * 这个重载版可以视为 这个方法的原始版 + registerItemEvent 方法 。
      *
+     * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
+     * @param listener 监听器实例
      * @throws ItemAlreadyRegisteredException 提供的内部名称已被注册时引发
-     * @since 1.1.8
+     * @since 插件 v1.1.8
      */
     public static void registerItem(@NotNull String name, @NotNull ItemStack item, @NotNull ItemEventListener listener) {
         registerItem(name, item);
@@ -56,7 +59,7 @@ public final class ItemRegistry {
      * 此方法用于注册一个对特定道具的监听器。
      * @param item 将被监听的物品
      * @param listener 监听器实例
-     * @since 1.1.6
+     * @since 插件 v1.1.6
      */
     public static void registerItemEvent(@NotNull ItemStack item, @NotNull ItemEventListener listener) {
         throw new UnsupportedOperationException();
@@ -66,7 +69,7 @@ public final class ItemRegistry {
      * 获取对特定道具的监听器。
      * @param item 用于查询的道具实例
      * @return 所有针对目标道具的监听器实例 (列表内可能无元素) 。
-     * @since 1.1.6
+     * @since 插件 v1.1.6
      */
     @NotNull
     public static List<ItemEventListener> getProcessorByItem(@NotNull ItemStack item) {
@@ -79,8 +82,8 @@ public final class ItemRegistry {
      * 本质是先获取道具实例再获取监听器实例列表。
      *
      * @param name 道具的内部名称
+     * @return 道具对应的监听器实例的列表
      */
-    @SuppressWarnings("unused")
     @NotNull
     public static List<ItemEventListener> getProcessorByName(@NotNull String name) {
         throw new UnsupportedOperationException();

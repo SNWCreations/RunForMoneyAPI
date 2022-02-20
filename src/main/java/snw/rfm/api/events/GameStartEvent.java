@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 游戏开始事件。
+ * <p>
+ * 此事件产生时机: 游戏开始前的检查已经通过，但 {@link snw.rfm.api.GameController} 的实现的实例还未设置。此事件完成后，游戏正式启动。
  */
 public final class GameStartEvent extends Event {
     private static final HandlerList handlers = new HandlerList();

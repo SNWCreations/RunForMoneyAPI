@@ -17,6 +17,10 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 玩家弃权事件。
+ * <p>
+ * 此事件产生时机: 玩家成功挖掘了弃权方块，但仍未被移除逃走队员列表。
+ * <p>
+ * 此事件完成后，玩家正式弃权。
  */
 public final class PlayerExitRFMEvent extends Event {
     private static final HandlerList handlers = new HandlerList();

@@ -6,10 +6,10 @@
 
     <groupId>snw</groupId>
     <artifactId>rfm-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
-    <name>Rfm Api</name>
+    <name>RFM API</name>
 
     <description>The API for "RunForMoney" plugin.</description>
     <properties>
@@ -129,6 +129,7 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>23.0.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
