@@ -1,5 +1,10 @@
 # RunForMoney API - 更新日志
 
+## v1.1.0 (2022/2/22)
+
+* 向 snw.rfm.api.GameController 接口增加 setHunterNoMoveTime 方法，详情见 Javadoc 。
+* 现在 snw.rfm.api.events.HunterCatchPlayerEvent 可以被取消。
+
 ## v1.0.1 (2022/2/20)
 
 * 补齐 snw.rfm.ItemRegistry 的部分缺失的 Javadoc 。

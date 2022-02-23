@@ -37,7 +37,7 @@ public interface GameController {
     /**
      * 设置时间是否倒流。
      * @param isGameReversed 时间是否倒流
-     * @deprecated 自 v1.1.11 起可以通过向 setCoinPerSecond 方法的实现传递负值实现时间倒流。
+     * @deprecated 自 v1.1.11 起可以通过向 {@link GameController#setCoinPerSecond} 方法的实现传递负值实现时间倒流。
      */
     @Deprecated
     void setGameReversed(boolean isGameReversed);
@@ -69,4 +69,10 @@ public interface GameController {
      * @return 游戏是否已经暂停
      */
     boolean isPaused();
+
+    /**
+     * 使全体猎人不能移动，可以指定时长。
+     * @param time 时长 (秒为单位，当提供的值不是正数时取消禁止移动)
+     */
+    void setHunterNoMoveTime(int time);
 }
