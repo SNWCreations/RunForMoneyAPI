@@ -1,5 +1,11 @@
 # RunForMoney API - 更新日志
 
+## v1.2.0 (2022/2/25)
+
+* 向 snw.rfm.api.GameController 接口增加 clearCoin 方法，详情见 Javadoc 。
+* 现在 BaseCountDownTimer#start 方法需要一个 Plugin 类型的参数。
+* 现在 RunForMoney#getCoinEarned 方法的返回值类型是 Map<String, Double> 。
+
 ## v1.1.0 (2022/2/22)
 
 * 向 snw.rfm.api.GameController 接口增加 setHunterNoMoveTime 方法，详情见 Javadoc 。

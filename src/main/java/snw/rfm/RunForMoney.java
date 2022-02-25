@@ -10,7 +10,6 @@
 
 package snw.rfm;
 
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import snw.rfm.api.GameController;
 
@@ -33,9 +32,9 @@ public final class RunForMoney extends JavaPlugin {
 
     /**
      * 获取B币榜的数据。
-     * @return B币榜数据的 Map <b>(未排序)</b> 。
+     * @return B币榜数据的 Map 。
      */
-    public Map<Player, Double> getCoinEarned() {
+    public Map<String, Double> getCoinEarned() {
         throw new UnsupportedOperationException();
     }
 

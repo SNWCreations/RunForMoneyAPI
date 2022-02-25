@@ -10,8 +10,9 @@
 
 package snw.rfm.tasks;
 
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import snw.rfm.RunForMoney;
+import org.bukkit.scheduler.BukkitScheduler;
 
 /**
  * 一个倒计时的实现。你可以继承这个类做倒计时。
@@ -34,9 +35,11 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
 
     /**
      * 启动此倒计时。
+     *
+     * @param plugin 此倒计时实例将要绑定的插件实例，这和 {@link BukkitScheduler#cancelTasks(Plugin)} 方法有关。
      */
-    public void start() {
-        super.runTaskTimer(RunForMoney.getInstance(), 20L, 20L);
+    public void start(Plugin plugin) {
+        super.runTaskTimer(plugin, 20L, 20L);
     }
 
     @Override
