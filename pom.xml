@@ -6,12 +6,25 @@
 
     <groupId>snw</groupId>
     <artifactId>rfm-api</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>RFM API</name>
 
     <description>The API for "RunForMoney" plugin.</description>
+
+    <developers>
+        <developer>
+            <id>SNWCreations</id>
+            <name>SNWCreations</name>
+            <email>snwcreations@qq.com</email>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
