@@ -73,11 +73,13 @@ public interface GameController {
     /**
      * 使全体猎人不能移动，可以指定时长。
      * @param time 时长 (秒为单位，当提供的值不是正数时取消禁止移动)
+     * @since 1.1.0
      */
     void setHunterNoMoveTime(int time);
 
     /**
      * 使所有仍存活的玩家 (排除已被捕或弃权的玩家) 所拥有的 B币 数量归零。谨慎操作。
+     * @since 1.2.0
      */
     void clearCoin();
 }
