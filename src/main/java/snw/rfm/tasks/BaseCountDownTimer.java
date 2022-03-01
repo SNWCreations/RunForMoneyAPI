@@ -36,7 +36,7 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
     /**
      * 启动此倒计时。
      *
-     * @param plugin 此倒计时实例将要绑定的插件实例，这和 {@link BukkitScheduler#cancelTasks(Plugin)} 方法有关。
+     * @param plugin 此倒计时实例将要绑定的插件实例，可以使用 {@link BukkitScheduler#cancelTasks(Plugin)} 方法使此实例停止运行。
      */
     public void start(Plugin plugin) {
         super.runTaskTimer(plugin, 20L, 20L);

@@ -11,8 +11,8 @@
 package snw.rfm.api.events;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -22,11 +22,12 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * 此事件完成后，玩家正式弃权。
  */
-public final class PlayerExitRFMEvent extends Event {
+public final class PlayerExitRFMEvent extends PlayerEvent {
     private static final HandlerList handlers = new HandlerList();
     private final Player whoExited;
 
     public PlayerExitRFMEvent(Player whoExited) {
+        super(whoExited);
         this.whoExited = whoExited;
     }
 
@@ -34,7 +35,9 @@ public final class PlayerExitRFMEvent extends Event {
      * 获取弃权者。
      *
      * @return 弃权者
+     * @deprecated 严格意义上来说，这应该是一个 {@link PlayerEvent} 的子类，所以您应该使用 {@link PlayerEvent#getPlayer()} 方法。但此方法仍然可用，返回值与其相同。
      */
+    @Deprecated
     public Player getWhoExited() {
         return whoExited;
     }

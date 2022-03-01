@@ -10,9 +10,11 @@
 
 package snw.rfm.api;
 
+import org.bukkit.entity.Player;
 import snw.rfm.RunForMoney;
 import snw.rfm.api.throwables.AlreadyPausedException;
 import snw.rfm.api.throwables.AlreadyRunningException;
+import snw.rfm.tasks.ScheduledRFMTask;
 
 /**
  * 游戏控制器。可以对游戏进行一些修改。
@@ -82,4 +84,22 @@ public interface GameController {
      * @since 1.2.0
      */
     void clearCoin();
+
+    /**
+     * 使一个 {@link Runnable} 在游戏剩余 remaining 分钟时被调用。
+     *
+     * @param remaining 目标的剩余时间 (单位: 分钟)
+     * @param runnable 将被调用的 {@link Runnable}
+     * @return runnable 的一个包装，详见 {@link ScheduledRFMTask}
+     * @since 1.3.0
+     */
+    ScheduledRFMTask registerRemainingTimeEvent(int remaining, Runnable runnable);
+
+    /**
+     * 使 player 重新回到逃走中游戏。
+     * @param player 将被复活的玩家
+     * @return 操作是否成功，如果返回 false ，则该玩家可能不在线或仍存活
+     * @since 1.3.0
+     */
+    boolean respawn(Player player);
 }

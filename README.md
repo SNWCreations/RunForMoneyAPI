@@ -8,9 +8,19 @@
 
 具体请见代码内容。
 
+如需监听游戏内的事件，请到 snw.rfm.api.events 包下寻找您需要的事件。
+
+如需对游戏进行修改，请见 snw.rfm.api.GameController 接口。
+
+如需注册和监听道具，请见 snw.rfm.ItemRegistry 和 snw.rfm.api.ItemEventListener 接口。
+
 ## 添加依赖
 
 无论您使用哪种方法，请向 plugin.yml 里的 depend 项和 loadbefore 项添加 "RunForMoney" 以保证您的插件正常工作。
+
+**注意: 请不要使用此 API 的 Beta 版 (版本号格式为: X.X.X-betaX，其中 X 为数字) 。虽然我不会直接发布 Beta 版，但如果不小心发布了，请不要使用。**
+
+**Beta 版 API 极其不稳定，您所调用的来自 Beta 版 API 的方法可能在下一个 Beta 版就会被标记为 @Deprecated 或者更名，甚至直接移除。**
 
 ### Maven
 

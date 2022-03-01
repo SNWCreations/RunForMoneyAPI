@@ -10,18 +10,29 @@
 
 package snw.rfm.api.events;
 
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
+import snw.rfm.RunForMoney;
 import snw.rfm.api.GameController;
 
 /**
- * 此事件表示"逃走中"游戏即将开始。
+ * 此事件表示"逃走中"游戏已经开始。
  * <p>
- * 此事件产生时机: 游戏开始前的检查已经通过，但 {@link GameController} 的实现的实例还未设置。
- * <p>
- * 此事件完成后，游戏正式启动。届时，插件会产生一个 {@link GamePostStartEvent} 的事件。
- * <p>
- * <i>--- 同 {@link GamePreStartEvent}</i>
- * @deprecated 您应该监听 {@link GamePreStartEvent} 或 {@link GamePostStartEvent} 。此事件将在未来被移除。
+ * 此事件发生时，您可以通过调用 {@link RunForMoney#getGameController()} 获得 {@link GameController} 的实现的实例。
+ *
+ * @since 1.3.0
  */
-@Deprecated
-public final class GameStartEvent extends GamePreStartEvent {
+public final class GamePostStartEvent extends Event {
+    private static final HandlerList handlers = new HandlerList();
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
+    @NotNull
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 }

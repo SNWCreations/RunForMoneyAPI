@@ -1,5 +1,14 @@
 # RunForMoney API - 更新日志
 
+## v1.3.0
+
+* 增加了事件 GamePauseEvent, GameResumeEvent, GamePostStartEvent 。
+* 向 HunterCatchPlayerEvent 增加了方法 getCoinEarned(boolean multiplier) 。
+* 向 snw.rfm.api.GameController 接口增加 registerRemainingTimeEvent 和 respawn 方法。
+* 随着 GameController#registerRemainingTimeEvent 方法的增加，向 snw.rfm.tasks 包增加了接口 ScheduledRFMTask ，此接口的实现是该方法的返回值。
+* GameStartEvent 更名为 GamePreStartEvent，原有类被标记为 Deprecated 。
+* 移除了位于 snw.rfm.api.events 包的 package-info.java 。因为其无意义。
+
 ## v1.2.0 (2022/2/25)
 
 * 向 snw.rfm.api.GameController 接口增加 clearCoin 方法，详情见 Javadoc 。
