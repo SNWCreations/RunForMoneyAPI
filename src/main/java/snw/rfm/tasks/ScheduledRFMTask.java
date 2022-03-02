@@ -25,12 +25,14 @@ public interface ScheduledRFMTask {
 
     /**
      * 返回此计划任务是否已被执行。
+     *
      * @return 此计划任务是否已被执行
      */
     boolean isExecuted();
 
     /**
      * 返回距离该任务被执行的时间，秒为单位。
+     *
      * @return 距离该任务被执行的时间
      */
     int getRemainingTime();
@@ -39,6 +41,8 @@ public interface ScheduledRFMTask {
      * 立刻执行此计划任务。同时此包装的计时器将会停止运行并被插件移除。
      * <p>
      * 此实例的 {@link ScheduledRFMTask#isExecuted()} 方法的返回值在调用此方法后一定返回 true 。
+     *
+     * @throws IllegalStateException 当此计划任务已经被执行过一次 (即此方法之前已被调用) 但此方法又一次被调用时产生
      */
-    void executeItNow();
+    void executeItNow() throws IllegalStateException;
 }
