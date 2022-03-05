@@ -71,7 +71,7 @@ public final class HunterCatchPlayerEvent extends Event implements Cancellable {
      * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_catched" 的影响)
      * @return 该玩家最终获得的 B币 数量。
      */
-    public int getCoinEarned(boolean multiplier) {
+    public double getCoinEarned(boolean multiplier) {
         throw new UnsupportedOperationException();
     }
 

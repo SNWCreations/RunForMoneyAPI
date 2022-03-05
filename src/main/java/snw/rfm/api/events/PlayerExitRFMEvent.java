@@ -24,11 +24,9 @@ import org.jetbrains.annotations.NotNull;
  */
 public final class PlayerExitRFMEvent extends PlayerEvent {
     private static final HandlerList handlers = new HandlerList();
-    private final Player whoExited;
 
     public PlayerExitRFMEvent(Player whoExited) {
         super(whoExited);
-        this.whoExited = whoExited;
     }
 
     /**
@@ -39,7 +37,20 @@ public final class PlayerExitRFMEvent extends PlayerEvent {
      */
     @Deprecated
     public Player getWhoExited() {
-        return whoExited;
+        return getPlayer();
+    }
+
+
+    /**
+     * 获取该玩家最终能获得的 B币 。
+     * <p>
+     * <i>因需要插件配置文件的配合，故 API 无法提供此方法的实现。</i>
+     *
+     * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_catched" 的影响)
+     * @return 该玩家最终获得的 B币 数量。
+     */
+    public double getCoinEarned(boolean multiplier) {
+        throw new UnsupportedOperationException();
     }
 
     public static HandlerList getHandlerList() {

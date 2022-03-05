@@ -1,5 +1,10 @@
 # RunForMoney API - 更新日志
 
+## v1.3.2
+
+* HunterCatchPlayerEvent#getCoinEarned 方法的返回值应该是 double ，而不是 int ，特此纠正。
+* 向 PlayerExitRFMEvent 增加了方法 getCoinEarned(boolean multiplier) ，内部实现与 HunterCatchPlayerEvent#getCoinEarned 一致。
+
 ## v1.3.1
 
 * 移除了 HunterCatchPlayerEvent 构造方法的 coinEarned 参数。
