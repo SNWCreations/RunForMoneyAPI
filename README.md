@@ -47,7 +47,7 @@
             ....
             <repository>
                 <id>snw-personal-repo</id>
-                <url>https://raw.github.com/SNWCreations/mvn-repo/main/</url>
+                <url>https://ghproxy.com/https://raw.githubusercontent.com/SNWCreations/mvn-repo/main/</url>
             </repository>
         </repositories>
     </project>

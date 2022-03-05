@@ -1,5 +1,9 @@
 # RunForMoney API - 更新日志
 
+## v1.3.3
+
+* 修改了 ScheduledRFMTask 接口的一些 Javadoc 。
+
 ## v1.3.2
 
 * HunterCatchPlayerEvent#getCoinEarned 方法的返回值应该是 double ，而不是 int ，特此纠正。

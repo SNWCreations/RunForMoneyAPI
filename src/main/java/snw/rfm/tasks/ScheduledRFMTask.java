@@ -13,15 +13,17 @@ package snw.rfm.tasks;
 import snw.rfm.api.GameController;
 
 /**
- * 这是对一个已经通过 {@link GameController#registerRemainingTimeEvent(int, Runnable)} 注册的，将被执行的 {@link Runnable} 的包装。
+ * 这是对一个已经通过 {@link GameController#registerRemainingTimeEvent(int, Runnable)} 注册的，将被执行的 {@link Runnable} 计划任务的包装。
  * @since 1.3.0
  */
 public interface ScheduledRFMTask {
 
     /**
-     * 取消这个计划任务。此包装的计时器将会停止运行并被插件移除。
+     * 取消这个计划任务。
+     *
+     * @throws IllegalStateException 当此计划任务已经被取消时产生
      */
-    void cancel();
+    void cancel() throws IllegalStateException;
 
     /**
      * 返回此计划任务是否已被执行。
@@ -38,7 +40,7 @@ public interface ScheduledRFMTask {
     int getRemainingTime();
 
     /**
-     * 立刻执行此计划任务。同时此包装的计时器将会停止运行并被插件移除。
+     * 立刻执行此计划任务。
      * <p>
      * 此实例的 {@link ScheduledRFMTask#isExecuted()} 方法的返回值在调用此方法后一定返回 true 。
      *
