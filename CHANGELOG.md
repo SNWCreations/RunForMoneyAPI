@@ -1,5 +1,9 @@
 # RunForMoney API - 更新日志
 
+## v1.3.4
+
+* GameController#registerTimeEvent 返回值可能为 null ，于是我补上了 @Nullable 注解。
+
 ## v1.3.3
 
 * 修改了 ScheduledRFMTask 接口的一些 Javadoc 。
