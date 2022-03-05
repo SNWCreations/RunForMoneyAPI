@@ -30,7 +30,7 @@ public final class HunterCatchPlayerEvent extends Event implements Cancellable {
     private final int playerRemaining;
     private boolean isCancelled = false;
 
-    public HunterCatchPlayerEvent(Player catched, Player catcher, int playerRemaining, int coinEarned) {
+    public HunterCatchPlayerEvent(Player catched, Player catcher, int playerRemaining) {
         this.whoBeCatched = catched;
         this.catcher = catcher;
         this.playerRemaining = playerRemaining;

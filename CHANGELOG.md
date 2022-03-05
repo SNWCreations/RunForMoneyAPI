@@ -1,5 +1,9 @@
 # RunForMoney API - 更新日志
 
+## v1.3.1
+
+* 移除了 HunterCatchPlayerEvent 构造方法的 coinEarned 参数。
+
 ## v1.3.0
 
 * 增加了事件 GamePauseEvent, GameResumeEvent, GamePostStartEvent 。
