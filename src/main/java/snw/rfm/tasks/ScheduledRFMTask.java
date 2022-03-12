@@ -21,7 +21,7 @@ public interface ScheduledRFMTask {
     /**
      * 取消这个计划任务。
      *
-     * @throws IllegalStateException 当此计划任务已经被取消时产生
+     * @throws IllegalStateException 当此计划任务已经被取消或已经被执行时产生
      */
     void cancel() throws IllegalStateException;
 
@@ -33,7 +33,7 @@ public interface ScheduledRFMTask {
     boolean isExecuted();
 
     /**
-     * 返回距离该任务被执行的时间，秒为单位。
+     * 返回距离该任务被执行的时间，秒为单位。被执行后，此方法将始终返回 0 。
      *
      * @return 距离该任务被执行的时间
      */
@@ -47,4 +47,11 @@ public interface ScheduledRFMTask {
      * @throws IllegalStateException 当此计划任务已经被执行过一次 (即此方法之前已被调用) 但此方法又一次被调用时产生
      */
     void executeItNow() throws IllegalStateException;
+
+    /**
+     * 返回此计划任务是否已被取消。
+     *
+     * @return 此计划任务是否已被取消
+     */
+    boolean isCancelled();
 }

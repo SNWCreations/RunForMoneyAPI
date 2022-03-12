@@ -20,7 +20,6 @@ import snw.rfm.api.GameController;
  * 此事件表示"逃走中"游戏已经开始。
  * <p>
  * 此事件发生时，您可以通过调用 {@link RunForMoney#getGameController()} 获得 {@link GameController} 的实现的实例。
- *
  * @since 1.3.0
  */
 public final class GamePostStartEvent extends Event {

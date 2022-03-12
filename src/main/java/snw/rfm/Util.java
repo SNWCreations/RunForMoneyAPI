@@ -28,6 +28,13 @@ import java.util.stream.Collectors;
 public final class Util {
 
     /**
+     * 一个 <code>private</code> 的构造方法。这是个实用工具类，不应该被实例化。
+     */
+    private Util() {
+        throw new UnsupportedOperationException("No snw.rfm.Util instances for you!");
+    }
+
+    /**
      * 获取 b 中所有以 a 的值开头的字符串。
      * @param a 示例值
      * @param b 将被筛选的列表
@@ -43,7 +50,7 @@ public final class Util {
 
     /**
      * 获取所有玩家的名字。
-     * @return 包含了所有玩家的名字的 List (内部实现返回的是 {@link java.util.ArrayList}) 。
+     * @return 包含了所有玩家的名字的 {@link List} (内部实现返回的是 {@link java.util.ArrayList}) 。
      */
     @NotNull
     public static List<String> getAllPlayersName() {
@@ -53,11 +60,11 @@ public final class Util {
     }
 
     /**
-     * Map 的降序排序。
-     * @param map 将被排序的 Map
+     * {@link Map} 的降序排序。
+     * @param map 将被排序的 {@link Map}
      * @param <K> 任意值
-     * @param <V> 任意值
-     * @return 一个降序排序的 Map ({@link java.util.LinkedHashMap}) 。
+     * @param <V> 任意值，但需要实现 {@link Comparable} 接口
+     * @return 一个降序排序的 {@link Map} ({@link java.util.LinkedHashMap}) 。
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortDescend(@NotNull Map<K, V> map) {
         Validate.notNull(map);

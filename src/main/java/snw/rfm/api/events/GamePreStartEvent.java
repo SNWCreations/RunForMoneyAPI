@@ -21,7 +21,6 @@ import snw.rfm.api.GameController;
  * 此事件产生时机: 游戏开始前的检查已经通过，但 {@link GameController} 的实现的实例还未设置。
  * <p>
  * 此事件完成后，游戏正式启动。届时，插件会产生一个 {@link GamePostStartEvent} 的事件。
- *
  * @since 1.3.0
  */
 public class GamePreStartEvent extends Event {

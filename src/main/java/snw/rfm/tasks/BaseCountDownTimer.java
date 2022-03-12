@@ -13,6 +13,7 @@ package snw.rfm.tasks;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
+import org.bukkit.scheduler.BukkitTask;
 
 /**
  * 一个倒计时的实现。你可以继承这个类做倒计时。
@@ -22,11 +23,11 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
 
     /**
      * 主构造方法。
-     * <p>
-     * 注意: 尝试用小于等于 0 的值作为 secs 的值只会让你得到 {@link java.lang.IllegalArgumentException} 。
+     *
      * @param secs 倒计时的时长 (以秒为单位) 。
+     * @throws IllegalArgumentException 向 secs 参数传递非正数时触发。
      */
-    public BaseCountDownTimer(int secs) {
+    public BaseCountDownTimer(int secs) throws IllegalArgumentException {
         if (secs <= 0) {
             throw new IllegalArgumentException("设定时间必须大于 0 秒。");
         }
@@ -37,9 +38,10 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
      * 启动此倒计时。
      *
      * @param plugin 此倒计时实例将要绑定的插件实例，可以使用 {@link BukkitScheduler#cancelTasks(Plugin)} 方法使此实例停止运行。
+     * @return 此倒计时实例对应的 {@link BukkitTask} ，便于其他操作。
      */
-    public void start(Plugin plugin) {
-        super.runTaskTimer(plugin, 20L, 20L);
+    public BukkitTask start(Plugin plugin) {
+        return super.runTaskTimer(plugin, 20L, 20L);
     }
 
     @Override
@@ -54,6 +56,7 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
 
     /**
      * 获取此计时器实例还有多少秒自动停止。
+     *
      * @return 剩余时间
      */
     protected int getTimeLeft() {

@@ -15,8 +15,7 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * 此事件表示无逃走队员或猎人在服务器里，正在运行的"逃走中"游戏将被迫暂停。
- *
+ * 此事件在逃走队员或猎人的队伍已无人在线，正在运行的"逃走中"游戏<b>已经</b>被迫暂停时触发。
  * @since 1.3.0
  */
 public final class GamePauseEvent extends Event {

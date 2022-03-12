@@ -13,6 +13,7 @@ package snw.rfm.api.events;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,9 +32,9 @@ public final class GameStopEvent extends Event {
     /**
      * 获取获胜者集合。
      *
-     * @return 获胜者集合。
+     * @return 获胜者集合。但返回的集合可能不包含任何元素 (当所有玩家均被捕时可能产生此情况) 。
      */
-    @Nullable
+    @NotNull
     public Set<Player> getWinner() {
         throw new UnsupportedOperationException();
     }

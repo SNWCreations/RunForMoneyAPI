@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 此事件在管理员请求继续"逃走中"游戏且<b>操作成功</b>后产生。
- *
  * @since 1.3.0
  */
 public final class GameResumeEvent extends Event {

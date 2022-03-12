@@ -11,6 +11,7 @@
 package snw.rfm;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Nullable;
 import snw.rfm.api.GameController;
 
 import java.util.Map;
@@ -23,16 +24,20 @@ public final class RunForMoney extends JavaPlugin {
 
     /**
      * 获取游戏控制器实例。
+     * <p>
+     * 当游戏未在运行时，此方法返回 <code>null</code> 。
      * @return 游戏控制器实例。
      * @see GameController
      */
+    @Nullable
     public GameController getGameController() {
         throw new UnsupportedOperationException();
     }
 
     /**
      * 获取B币榜的数据。
-     * @return B币榜数据的 Map 。
+     *
+     * @return B币榜数据的 {@link Map} 。
      */
     public Map<String, Double> getCoinEarned() {
         throw new UnsupportedOperationException();
