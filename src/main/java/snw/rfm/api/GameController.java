@@ -146,6 +146,15 @@ public interface GameController {
     void addMoney(Player player, double coin);
 
     /**
+     * 使 <code>player</code> 瞬间获得数量为 <code>coin</code> 的B币。
+     *
+     * @param player 目标玩家
+     * @param coin 将增加的 B币 数量 (可以为负值从而实现扣钱)
+     * @since 1.4.0
+     */
+    void addMoney(String player, double coin);
+
+    /**
      * 强制淘汰某个玩家。
      *
      * @param player 将被强制淘汰的玩家

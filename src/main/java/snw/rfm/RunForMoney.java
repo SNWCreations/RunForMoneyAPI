@@ -10,6 +10,7 @@
 
 package snw.rfm;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.api.GameController;
@@ -38,7 +39,9 @@ public final class RunForMoney extends JavaPlugin {
      * 获取B币榜的数据。
      *
      * @return B币榜数据的 {@link Map} 。
+     * @deprecated 您不应该通过这个方法获取数据并进行操作，请使用 {@link GameController#addMoney(String, double)} 或 {@link GameController#clearCoin()} 之类的方法代替。
      */
+    @Deprecated
     public Map<String, Double> getCoinEarned() {
         throw new UnsupportedOperationException();
     }

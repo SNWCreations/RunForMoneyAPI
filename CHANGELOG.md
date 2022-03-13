@@ -1,5 +1,10 @@
 # RunForMoney API - 更新日志
 
+## v1.4.1
+
+* 向 GameController 增加了方法 addMoney(String player, double coin) ，作为 addMoney(Player player, double coin) 的父方法。
+* RunForMoney#getCoinEarned 现在是一个 Deprecated 的方法。
+
 ## v1.4.0
 
 * **!破坏性更改!** 改变了 GamePauseEvent 的触发时机。详情见其注释。
