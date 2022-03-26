@@ -14,7 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.api.ItemEventListener;
-import snw.rfm.api.throwables.ItemAlreadyRegisteredException;
 
 import java.util.List;
 import java.util.Set;
@@ -32,10 +31,10 @@ public final class ItemRegistry {
      *
      * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
-     * @throws ItemAlreadyRegisteredException 提供的内部名称或道具实例已被注册时引发
+     * @throws IllegalStateException 提供的内部名称或道具实例已被注册时引发
      * @since 插件 v1.1.8
      */
-    public static void registerItem(@NotNull String name, @NotNull ItemStack item) {
+    public static void registerItem(@NotNull String name, @NotNull ItemStack item) throws IllegalStateException {
         throw new UnsupportedOperationException();
     }
 
@@ -47,10 +46,10 @@ public final class ItemRegistry {
      * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
      * @param listener 监听器实例
-     * @throws ItemAlreadyRegisteredException 提供的内部名称已被注册时引发
+     * @throws IllegalStateException 提供的内部名称已被注册时引发
      * @since 插件 v1.1.8
      */
-    public static void registerItem(@NotNull String name, @NotNull ItemStack item, @NotNull ItemEventListener listener) {
+    public static void registerItem(@NotNull String name, @NotNull ItemStack item, @NotNull ItemEventListener listener) throws IllegalStateException {
         registerItem(name, item);
         registerItemEvent(item, listener);
     }

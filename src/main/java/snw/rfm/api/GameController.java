@@ -13,9 +13,6 @@ package snw.rfm.api;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.RunForMoney;
-import snw.rfm.api.events.GamePostStartEvent;
-import snw.rfm.api.throwables.AlreadyPausedException;
-import snw.rfm.api.throwables.AlreadyRunningException;
 import snw.rfm.tasks.ScheduledRFMTask;
 
 /**
@@ -61,16 +58,16 @@ public interface GameController {
     /**
      * 暂停游戏。
      *
-     * @throws AlreadyPausedException 当游戏进程实例已经被暂停时又一次调用此方法时引发此异常。
+     * @throws IllegalStateException 当游戏进程实例已经被暂停时又一次调用此方法时引发此异常。
      */
-    void pause() throws AlreadyPausedException;
+    void pause() throws IllegalStateException;
 
     /**
      * 继续游戏。
      *
-     * @throws AlreadyRunningException 当游戏进程实例已经在运行但又一次调用此方法时引发此异常。
+     * @throws IllegalStateException 当游戏进程实例已经在运行但又一次调用此方法时引发此异常。
      */
-    void resume() throws AlreadyRunningException;
+    void resume() throws IllegalStateException;
 
     /**
      * 获取游戏是否已经暂停。

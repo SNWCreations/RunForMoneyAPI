@@ -1,5 +1,11 @@
 # RunForMoney API - 更新日志
 
+## v1.5.0
+
+* **!破坏性更改!** 将所有拼写错误的 "catched" 改为 "caught" 。故部分方法被重命名。
+* 向 HunterCatchPlayerEvent 增加方法 setCoinEarned(double coin) 方法。
+* 移除了 snw.rfm.api.throwables 包，用 Java 原生异常替代相关用法。
+
 ## v1.4.1
 
 * 向 GameController 增加了方法 addMoney(String player, double coin) ，作为 addMoney(Player player, double coin) 的父方法。

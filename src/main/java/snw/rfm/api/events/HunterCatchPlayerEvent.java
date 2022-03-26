@@ -25,13 +25,13 @@ import org.jetbrains.annotations.NotNull;
  */
 public final class HunterCatchPlayerEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
-    private final Player whoBeCatched;
+    private final Player whoBeCaught;
     private final Player catcher;
     private final int playerRemaining;
     private boolean isCancelled = false;
 
-    public HunterCatchPlayerEvent(Player catched, Player catcher, int playerRemaining) {
-        this.whoBeCatched = catched;
+    public HunterCatchPlayerEvent(Player caught, Player catcher, int playerRemaining) {
+        this.whoBeCaught = caught;
         this.catcher = catcher;
         this.playerRemaining = playerRemaining;
     }
@@ -41,8 +41,8 @@ public final class HunterCatchPlayerEvent extends Event implements Cancellable {
      *
      * @return 被抓捕者
      */
-    public Player getWhoBeCatched() {
-        return whoBeCatched;
+    public Player getWhoBeCaught() {
+        return whoBeCaught;
     }
 
     /**
@@ -68,10 +68,20 @@ public final class HunterCatchPlayerEvent extends Event implements Cancellable {
      * <p>
      * <i>因需要插件配置文件的配合，故 API 无法提供此方法的实现。</i>
      *
-     * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_catched" 的影响)
+     * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_caught" 的影响)
      * @return 该玩家最终获得的 B币 数量。
      */
     public double getCoinEarned(boolean multiplier) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * 设置该玩家最终能获得的 B币 。
+     *
+     * @param coin 玩家将获得的 B币 。
+     * @throws IllegalArgumentException 当 <code>coin</code> 是负数或是 NaN 时抛出
+     */
+    public void setCoinEarned(double coin) throws IllegalArgumentException {
         throw new UnsupportedOperationException();
     }
 

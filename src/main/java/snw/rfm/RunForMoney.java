@@ -10,7 +10,6 @@
 
 package snw.rfm;
 
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.api.GameController;

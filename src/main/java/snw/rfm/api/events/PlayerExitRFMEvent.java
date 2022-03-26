@@ -46,7 +46,7 @@ public final class PlayerExitRFMEvent extends PlayerEvent {
      * <p>
      * <i>因需要插件配置文件的配合，故 API 无法提供此方法的实现。</i>
      *
-     * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_catched" 的影响)
+     * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_caught" 的影响)
      * @return 该玩家最终获得的 B币 数量。
      */
     public double getCoinEarned(boolean multiplier) {

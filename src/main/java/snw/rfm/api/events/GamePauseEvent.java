@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 public final class GamePauseEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
 
-    private static HandlerList getHandlerList() {
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 
