@@ -13,6 +13,7 @@ package snw.rfm.api;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.RunForMoney;
+import snw.rfm.api.events.GamePostStartEvent;
 import snw.rfm.api.throwables.AlreadyPausedException;
 import snw.rfm.api.throwables.AlreadyRunningException;
 import snw.rfm.tasks.ScheduledRFMTask;
@@ -97,6 +98,8 @@ public interface GameController {
      * 使一个 {@link Runnable} 在游戏剩余 <code>remaining</code> 分钟时被调用。
      * <p>
      * <b>当此任务永远没有机会执行时 (例如你的任务在剩余 30 分钟时执行，但本次游戏的时间小于 30 分钟) ，返回值为 <code>null</code> 。</b>
+     * <p>
+     * 请<b>不要</b>在 <code>runnable</code> 的代码中调用此方法，否则可能会导致不可预知的问题。
      *
      * @param remaining 目标的剩余时间 (单位: 分钟)
      * @param runnable 将被调用的 {@link Runnable}
