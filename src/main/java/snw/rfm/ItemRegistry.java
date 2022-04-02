@@ -31,10 +31,11 @@ public final class ItemRegistry {
      *
      * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
+     * @throws IllegalArgumentException 当内部名称不是由纯英文和数字时引发
      * @throws IllegalStateException 提供的内部名称或道具实例已被注册时引发
      * @since 插件 v1.1.8
      */
-    public static void registerItem(@NotNull String name, @NotNull ItemStack item) throws IllegalStateException {
+    public static void registerItem(@NotNull String name, @NotNull ItemStack item) throws IllegalArgumentException, IllegalStateException {
         throw new UnsupportedOperationException();
     }
 
@@ -46,10 +47,11 @@ public final class ItemRegistry {
      * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
      * @param listener 监听器实例
+     * @throws IllegalArgumentException 当内部名称不是由纯英文和数字时引发
      * @throws IllegalStateException 提供的内部名称已被注册时引发
      * @since 插件 v1.1.8
      */
-    public static void registerItem(@NotNull String name, @NotNull ItemStack item, @NotNull ItemEventListener listener) throws IllegalStateException {
+    public static void registerItem(@NotNull String name, @NotNull ItemStack item, @NotNull ItemEventListener listener) throws IllegalArgumentException, IllegalStateException {
         registerItem(name, item);
         registerItemEvent(item, listener);
     }

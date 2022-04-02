@@ -107,6 +107,23 @@ public interface GameController {
     ScheduledRFMTask registerRemainingTimeEvent(int remaining, Runnable runnable);
 
     /**
+     * 使一个 {@link Runnable} 在游戏剩余 <code>remaining</code> 秒时被调用。
+     * <p>
+     * 请注意，是剩余 <code>remaining</code> <b>秒</b>时调用。不同于 {@link GameController#registerRemainingTimeEvent(int, Runnable)} 。
+     * <p>
+     * <b>当此任务永远没有机会执行时 (例如你的任务在剩余 30 分钟时执行，但本次游戏的时间小于 30 分钟) ，返回值为 <code>null</code> 。</b>
+     * <p>
+     * 请<b>不要</b>在 <code>runnable</code> 的代码中调用此方法，否则可能会导致不可预知的问题。
+     *
+     * @param remaining 目标的剩余时间 (单位: 分钟)
+     * @param runnable 将被调用的 {@link Runnable}
+     * @return <code>runnable</code> 的一个包装，详见 {@link ScheduledRFMTask}
+     * @since 1.6.0
+     */
+    @Nullable
+    ScheduledRFMTask registerRemainingSecondEvent(int remaining, Runnable runnable);
+
+    /**
      * 使 <code>player</code> 重新回到"逃走中"游戏。
      *
      * @param player 将被复活的玩家
