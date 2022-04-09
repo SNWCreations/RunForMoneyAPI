@@ -11,6 +11,7 @@
 package snw.rfm.api.events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
@@ -22,8 +23,9 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * 此事件完成后，玩家正式弃权。
  */
-public final class PlayerExitRFMEvent extends PlayerEvent {
+public final class PlayerExitRFMEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
+    private boolean cancel = false;
 
     public PlayerExitRFMEvent(Player whoExited) {
         super(whoExited);
@@ -53,6 +55,26 @@ public final class PlayerExitRFMEvent extends PlayerEvent {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * 设置该玩家最终能获得的 B币 。
+     * <p>
+     * <b>注意，此方法被成功调用后，无论向 {@link PlayerExitRFMEvent#getCoinEarned(boolean)} 方法传递 <code>true</code> 还是 <code>false</code> ，返回值都始终会是提供给此方法的值。</b>
+     *
+     * @param coin 玩家将获得的 B币 。
+     * @throws IllegalArgumentException 当 <code>coin</code> 是负数或是 NaN 时抛出
+     */
+    public void setCoinEarned(double coin) throws IllegalArgumentException {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * 返回此事件的 B币 值是否已被修改。
+     * @return 此事件的 B币 值是否已被修改
+     */
+    public boolean isModified() {
+        throw new UnsupportedOperationException();
+    }
+
     public static HandlerList getHandlerList() {
         return handlers;
     }
@@ -61,5 +83,15 @@ public final class PlayerExitRFMEvent extends PlayerEvent {
     @Override
     public HandlerList getHandlers() {
         return handlers;
+    }
+
+    @Override
+    public boolean isCancelled() {
+        return cancel;
+    }
+
+    @Override
+    public void setCancelled(boolean cancel) {
+        this.cancel = cancel;
     }
 }

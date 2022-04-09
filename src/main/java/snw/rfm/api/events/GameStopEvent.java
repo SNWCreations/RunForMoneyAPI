@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
+import snw.rfm.game.TeamHolder;
 
 import java.util.Set;
 
@@ -33,8 +34,8 @@ public final class GameStopEvent extends Event {
      * @return 获胜者集合。但返回的集合可能不包含任何元素 (当所有玩家均被捕时可能产生此情况) 。
      */
     @NotNull
-    public Set<Player> getWinner() {
-        throw new UnsupportedOperationException();
+    public Set<String> getWinner() {
+        return TeamHolder.getInstance().getRunners();
     }
 
     public static HandlerList getHandlerList() {

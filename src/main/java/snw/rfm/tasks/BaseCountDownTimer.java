@@ -29,7 +29,7 @@ public abstract class BaseCountDownTimer extends BukkitRunnable {
      */
     public BaseCountDownTimer(int secs) throws IllegalArgumentException {
         if (secs <= 0) {
-            throw new IllegalArgumentException("设定时间必须大于 0 秒。");
+            throw new IllegalArgumentException("The secs argument cannot be negative or zero.");
         }
         this.secs = secs;
     }

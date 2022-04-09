@@ -16,9 +16,16 @@ import org.bukkit.entity.Player;
 import java.util.Set;
 
 /**
- * 猎人/逃走队员 队伍类。具体实现不提供，
+ * 猎人/逃走队员 队伍类。具体实现不提供。
+ * <p>
+ * <b>注意: 除非特殊说明，否则以下方法需要传入的 String 类型参数都是大小写敏感的。</b>
  */
 public final class TeamHolder {
+
+    // The instance of this class should be created by RunForMoney plugin only.
+    private TeamHolder() {
+        throw new UnsupportedOperationException();
+    }
 
     /**
      * 判断一个玩家是不是逃走队员。
@@ -67,6 +74,16 @@ public final class TeamHolder {
      * @return 该猎人是否已启用 (玩家不是猎人时一定返回 <code>false</code>)
      */
     public boolean isHunterEnabled(Player player) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * 判断一个猎人是否已启用。
+     *
+     * @param player 玩家实例
+     * @return 该猎人是否已启用 (玩家不是猎人时一定返回 <code>false</code>)
+     */
+    public boolean isHunterEnabled(String player) {
         throw new UnsupportedOperationException();
     }
 

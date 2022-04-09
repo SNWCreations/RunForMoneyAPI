@@ -1,5 +1,13 @@
 # RunForMoney API - 更新日志
 
+## v1.5.1
+
+* **!破坏性更改!** 将 GameStopEvent 的 getWinner 方法返回值从 `Set<Player>` 改为 `Set<String>` 。
+* 向 HunterCatchPlayerEvent 增加了 isModified 方法。
+* 向 PlayerExitRFMEvent 增加了 setCoinEarned, isModified 方法。
+* 现在 PlayerExitRFMEvent 可以被取消了。
+* 补充了部分方法的说明。
+
 ## v1.5.0
 
 * **!破坏性更改!** 将所有拼写错误的 "catched" 改为 "caught" 。故部分方法被重命名。
