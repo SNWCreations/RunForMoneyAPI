@@ -26,6 +26,57 @@
 
 ### Maven
 
+把此 API 添加到你的 pom.xml 里的 dependencies 项，然后把 JitPack 服务器添加到 repositories 即可。
+
+完整 pom.xml 的示例是这样的:
+
+    <project>
+        ...
+        <dependencies>
+            ...
+            <dependency>
+                <groupId>com.github.SNWCreations</groupId>
+                <artifactId>RunForMoneyAPI</artifactId>
+                <version>(LATEST VERSION)</version>
+                <scope>provided</scope>
+            </dependency>
+            ...
+        </dependencies>
+        ...
+        <repositories>
+            ....
+						<repository>
+								<id>jitpack.io</id>
+								<url>https://jitpack.io</url>
+						</repository>
+        </repositories>
+    </project>
+
+### Gradle
+
+因作者没用过 Gradle，以下内容选自网络，对有效性不做保证。
+
+在 dependencies 部分里加上对此工件的引用。
+
+    dependencies {
+        ...
+        compileOnly 'com.github.SNWCreations:RunForMoneyAPI:(LATEST VERSION)'
+    }
+
+还要在 repositories 里增加对 JitPack 服务器的引用。
+
+    repositories {
+				maven { url 'https://jitpack.io' }
+        ...
+    }
+
+
+### 过去的方法
+
+以下方法已经过时。且我的 Maven 私服不再更新，因此您将不能获得 v1.5.1 之后 (包括 v1.5.1) 版本的 API (包括 Sources, Javadoc) 。
+
+#### Maven
+
 把此 API 添加到你的 pom.xml 里的 dependencies 项，然后把我的 Maven 私服添加到 repositories 即可。
 
 完整 pom.xml 的示例是这样的:
@@ -52,7 +103,7 @@
         </repositories>
     </project>
 
-### Gradle
+#### Gradle
 
 因作者没用过 Gradle，以下内容选自网络，对有效性不做保证。
 
