@@ -1,5 +1,9 @@
 # RunForMoney API - 更新日志
 
+## v1.6.0
+
+* 从插件本体同步了 TeamHolder 类的方法，部分仅内部可用的方法没有添加。
+
 ## v1.5.1
 
 * **!破坏性更改!** 将 GameStopEvent 的 getWinner 方法返回值从 `Set<Player>` 改为 `Set<String>` 。
