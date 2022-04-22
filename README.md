@@ -45,10 +45,10 @@
         ...
         <repositories>
             ....
-						<repository>
-								<id>jitpack.io</id>
-								<url>https://jitpack.io</url>
-						</repository>
+            <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+            </repository>
         </repositories>
     </project>
 
@@ -66,14 +66,14 @@
 还要在 repositories 里增加对 JitPack 服务器的引用。
 
     repositories {
-				maven { url 'https://jitpack.io' }
+        maven { url 'https://jitpack.io' }
         ...
     }
 
 
 ### 过去的方法
 
-以下方法已经过时。且我的 Maven 私服不再更新，因此您将不能获得 v1.5.1 之后 (包括 v1.5.1) 版本的 API (包括 Sources, Javadoc) 。
+以下方法已经过时。且我的 Maven 私服不再更新，因此您将不能从我的私服获得 v1.5.1 之后 (包括 v1.5.1) 版本的 API 。
 
 #### Maven
 

@@ -6,7 +6,7 @@
 
     <groupId>snw</groupId>
     <artifactId>rfm-api</artifactId>
-    <version>1.5.1</version>
+    <version>1.6.0</version>
     <packaging>jar</packaging>
 
     <name>RFM API</name>
@@ -90,46 +90,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-                <configuration>
-                    <altDeploymentRepository>maven.repo::default::file://${project.build.directory}/mvn-repo
-                    </altDeploymentRepository>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Deploy the web site -->
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>0.12</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <!-- select the Maven phase in which the plugin will be executed -->
-                        <phase>deploy</phase>
-                        <configuration>
-                            <!-- Plugin configuration goes here -->
-                            <server>github</server>
-                            <!-- The commit message -->
-                            <message>Update</message>
-                            <!-- The location where the site is uploaded -->
-                            <repositoryName>mvn-repo</repositoryName> <!-- github repo name -->
-                            <repositoryOwner>SNWCreations</repositoryOwner> <!-- organization or user name  -->
-                            <!-- Use merge or override the content -->
-                            <merge>true</merge>
-                            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                            <branch>refs/heads/main</branch>
-                            <!--                        <includes>-->
-                            <!--                            <include>**/*</include>-->
-                            <!--                        </includes>-->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
@@ -158,12 +118,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>maven.repo</id>
-            <name>Local Staging Repository</name>
-            <url>file://${project.build.directory}/mvn-repo</url>
-        </repository>
-    </distributionManagement>
 </project>
