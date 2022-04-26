@@ -54,9 +54,7 @@ public final class Util {
      */
     @NotNull
     public static List<String> getAllPlayersName() {
-        List<String> result = new ArrayList<>();
-        Bukkit.getOnlinePlayers().forEach((player -> result.add(player.getName())));
-        return result;
+        return Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList());
     }
 
     /**
@@ -69,15 +67,10 @@ public final class Util {
     public static <K, V extends Comparable<? super V>> Map<K, V> sortDescend(@NotNull Map<K, V> map) {
         Validate.notNull(map);
         List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
-        list.sort((o1, o2) -> {
-            int compare = (o1.getValue()).compareTo(o2.getValue());
-            return -compare;
-        });
+        list.sort((o1, o2) -> -((o1.getValue()).compareTo(o2.getValue())));
 
         Map<K, V> returnMap = new LinkedHashMap<>();
-        for (Map.Entry<K, V> entry : list) {
-            returnMap.put(entry.getKey(), entry.getValue());
-        }
+        list.forEach(entry -> returnMap.put(entry.getKey(), entry.getValue()));
         return returnMap;
     }
 
