@@ -83,13 +83,6 @@ public interface GameController {
     void setHunterNoMoveTime(int time);
 
     /**
-     * 使所有仍存活的玩家 (排除已被捕或弃权的玩家) 所拥有的 B币 数量归零。谨慎操作。
-     *
-     * @since 1.2.0
-     */
-    void clearCoin();
-
-    /**
      * 使一个 {@link Runnable} 在游戏剩余 <code>remaining</code> 分钟时被调用。
      * <p>
      * <b>当此任务永远没有机会执行时 (例如你的任务在剩余 30 分钟时执行，但本次游戏的时间小于 30 分钟) ，返回值为 <code>null</code> 。</b>
@@ -116,7 +109,7 @@ public interface GameController {
      * @param remaining 目标的剩余时间 (单位: 分钟)
      * @param runnable 将被调用的 {@link Runnable}
      * @return <code>runnable</code> 的一个包装，详见 {@link ScheduledRFMTask}
-     * @since 1.6.0
+     * @since 1.5.1
      */
     @Nullable
     ScheduledRFMTask registerRemainingSecondEvent(int remaining, Runnable runnable);
@@ -152,6 +145,57 @@ public interface GameController {
     void removeRemainingTime(int secsToRemove, boolean addCoin) throws IllegalArgumentException;
 
     /**
+     * 强制淘汰某个玩家。
+     *
+     * @param player 将被强制淘汰的玩家
+     * @throws IllegalStateException 当玩家在此方法被调用前就已被淘汰时，或玩家是猎人时引发
+     * @since 1.4.0
+     */
+    void forceOut(Player player) throws IllegalStateException;
+
+    /**
+     * 获取游戏剩余时间 (秒 为单位)。
+     *
+     * @return 游戏剩余时间 (秒 为单位)
+     */
+    int getGameRemainingTime();
+
+
+    /* ***************** MONEY CONTROLLING ***************** */
+
+    /**
+     * 获取某玩家拥有的硬币数量。
+     *
+     * @param player 玩家实例
+     * @return 此玩家拥有的硬币数量
+     */
+    double getMoney(Player player);
+
+    /**
+     * 设置某玩家拥有的硬币数量。
+     *
+     * @param player 玩家名称
+     * @param amount 此玩家将拥有的硬币数量
+     */
+    void setMoney(Player player, double amount);
+
+    /**
+     * 获取某玩家拥有的硬币数量。
+     *
+     * @param player 玩家名称
+     * @return 此玩家拥有的硬币数量
+     */
+    double getMoney(String player);
+
+    /**
+     * 设置某玩家拥有的硬币数量。
+     *
+     * @param player 玩家名称
+     * @param amount 此玩家将拥有的硬币数量
+     */
+    void setMoney(String player, double amount);
+
+    /**
      * 使 <code>player</code> 瞬间获得数量为 <code>coin</code> 的B币。
      *
      * @param player 目标玩家
@@ -170,18 +214,9 @@ public interface GameController {
     void addMoney(String player, double coin);
 
     /**
-     * 强制淘汰某个玩家。
+     * 使所有仍存活的玩家 (排除已被捕或弃权的玩家) 所拥有的 B币 数量归零。谨慎操作。
      *
-     * @param player 将被强制淘汰的玩家
-     * @throws IllegalStateException 当玩家在此方法被调用前就已被淘汰时，或玩家是猎人时引发
-     * @since 1.4.0
+     * @since 1.2.0
      */
-    void forceOut(Player player) throws IllegalStateException;
-
-    /**
-     * 获取游戏剩余时间 (秒 为单位)。
-     *
-     * @return 游戏剩余时间 (秒 为单位)
-     */
-    int getGameRemainingTime();
+    void clearCoin();
 }
