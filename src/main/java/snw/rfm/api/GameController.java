@@ -50,9 +50,7 @@ public interface GameController {
      * 获取时间是否正在倒流。
      *
      * @return 时间是否正在倒流
-     * @deprecated 自 v1.1.11 起，可以通过调用 {@link GameController#getCoinPerSecond()} 方法的实现，并判断其返回值是否为负来确定时间是否正在倒流。
      */
-    @Deprecated
     boolean isGameReversed();
 
     /**
