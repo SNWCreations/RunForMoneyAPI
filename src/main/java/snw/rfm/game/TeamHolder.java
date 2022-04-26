@@ -70,6 +70,7 @@ public final class TeamHolder {
 
     /**
      * 判断一个玩家是否不在游戏中 (不在猎人/逃走队员的队伍中) 。
+     *
      * @param player 玩家实例
      * @return 玩家是否不在游戏中
      */
@@ -79,6 +80,7 @@ public final class TeamHolder {
 
     /**
      * 判断一个玩家是否不在游戏中 (不在猎人/逃走队员的队伍中) 。
+     *
      * @param player 玩家名
      * @return 玩家是否不在游戏中
      */
@@ -88,6 +90,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家成为猎人、若玩家是逃走队员，则TA将会从逃走队员的队伍中离开。
+     *
      * @param player 玩家实例
      */
     public void addHunter(Player player) {
@@ -96,6 +99,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家成为逃走队员、若玩家是猎人，则TA将会从猎人的队伍中离开。如果TA在某个组中，TA也会从所在的组离开。
+     *
      * @param player 玩家实例
      */
     public void addRunner(Player player) {
@@ -104,6 +108,7 @@ public final class TeamHolder {
 
     /**
      * 使某个玩家不再是猎人。同时TA也会从所在的组(如果有)离开。
+     *
      * @param player 玩家实例
      */
     public void removeHunter(Player player) {
@@ -112,6 +117,7 @@ public final class TeamHolder {
 
     /**
      * 使某个玩家不再是逃走队员。
+     *
      * @param player 玩家实例
      */
     public void removeRunner(Player player) {
@@ -141,6 +147,7 @@ public final class TeamHolder {
 
     /**
      * 是否没有猎人<b>在线</b>。
+     *
      * @return 是否没有猎人<b>在线</b>
      */
     public boolean isNoHunterFound() {
@@ -149,6 +156,7 @@ public final class TeamHolder {
 
     /**
      * 是否没有逃走队员<b>在线</b>。
+     *
      * @return 是否没有逃走队员<b>在线</b>
      */
     public boolean isNoRunnerFound() {
@@ -157,6 +165,7 @@ public final class TeamHolder {
 
     /**
      * 启用某个猎人。
+     *
      * @param player 将被启用的猎人
      */
     public void addEnabledHunter(Player player) throws IllegalStateException {
@@ -165,6 +174,7 @@ public final class TeamHolder {
 
     /**
      * 启用某个猎人。
+     *
      * @param player 将被启用的猎人
      */
     public void addEnabledHunter(String player) throws IllegalStateException {
@@ -173,6 +183,7 @@ public final class TeamHolder {
 
     /**
      * 设置某玩家为弃权者。在 <code>{@link TeamHolder#getGiveUpPlayer()} != null</code> 时调用此方法无效。
+     *
      * @param player 玩家名
      */
     public void setGiveUpPlayer(@Nullable String player) {
@@ -181,6 +192,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家被当做已被淘汰的玩家。
+     *
      * @param player 玩家实例
      */
     public void addOutPlayer(Player player) {
@@ -189,6 +201,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家不再被当做已被淘汰的玩家。
+     *
      * @param player 玩家实例
      */
     public void removeOutPlayer(Player player) {
@@ -197,6 +210,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家被当做已被淘汰的玩家。
+     *
      * @param player 玩家名
      */
     public void addOutPlayer(String player) {
@@ -205,6 +219,7 @@ public final class TeamHolder {
 
     /**
      * 使某玩家不再被当做已被淘汰的玩家。
+     *
      * @param player 玩家名
      */
     public void removeOutPlayer(String player) {
@@ -213,6 +228,7 @@ public final class TeamHolder {
 
     /**
      * 禁用某个猎人。
+     *
      * @param player 将被禁用的猎人的玩家实例
      */
     public void removeEnabledHunter(Player player) {
@@ -221,6 +237,7 @@ public final class TeamHolder {
 
     /**
      * 禁用某个猎人。
+     *
      * @param player 将被禁用的猎人的玩家名
      */
     public void removeEnabledHunter(String player) {
@@ -250,12 +267,18 @@ public final class TeamHolder {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * 获取所有已被淘汰的玩家的名称。
+     *
+     * @return 所有已被淘汰的玩家的名称
+     */
     public Set<String> getOutPlayers() {
         throw new UnsupportedOperationException();
     }
 
     /**
      * 获取弃权者的游戏名称。
+     *
      * @return 弃权者的游戏名称
      */
     public String getGiveUpPlayer() {
