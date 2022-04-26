@@ -12,6 +12,7 @@ package snw.rfm.api;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 此接口的实现可以在"逃走中"游戏<b>运行时</b>监听玩家使用特定道具并作出一些操作。
@@ -29,5 +30,5 @@ public interface ItemEventListener {
      * @return 物品是否应该被消耗
      * @see snw.rfm.ItemRegistry#registerItemEvent(ItemStack, ItemEventListener)
      */
-    boolean onPlayerUseRequiredItem(Player player);
+    boolean onPlayerUseRequiredItem(@NotNull Player player);
 }

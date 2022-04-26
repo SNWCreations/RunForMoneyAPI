@@ -12,6 +12,7 @@ package snw.rfm.game;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
@@ -34,6 +35,7 @@ public final class TeamHolder {
      * @param player 玩家实例
      * @return 玩家是不是逃走队员
      */
+    @Contract("null -> fail")
     public boolean isRunner(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -44,6 +46,7 @@ public final class TeamHolder {
      * @param player 玩家实例
      * @return 玩家是不是猎人
      */
+    @Contract("null -> fail")
     public boolean isHunter(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -54,6 +57,7 @@ public final class TeamHolder {
      * @param player 玩家名
      * @return 玩家是不是逃走队员
      */
+    @Contract("null -> fail")
     public boolean isRunner(String player) {
         throw new UnsupportedOperationException();
     }
@@ -64,6 +68,7 @@ public final class TeamHolder {
      * @param player 玩家名
      * @return 玩家是不是猎人
      */
+    @Contract("null -> fail")
     public boolean isHunter(String player) {
         throw new UnsupportedOperationException();
     }
@@ -74,6 +79,7 @@ public final class TeamHolder {
      * @param player 玩家实例
      * @return 玩家是否不在游戏中
      */
+    @Contract("null -> fail")
     public boolean isNotInGame(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -84,6 +90,7 @@ public final class TeamHolder {
      * @param player 玩家名
      * @return 玩家是否不在游戏中
      */
+    @Contract("null -> fail")
     public boolean isNotInGame(String player) {
         throw new UnsupportedOperationException();
     }
@@ -93,6 +100,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void addHunter(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -102,6 +110,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void addRunner(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -111,6 +120,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void removeHunter(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -120,6 +130,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void removeRunner(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -131,6 +142,7 @@ public final class TeamHolder {
      * @param player 玩家实例
      * @return 该猎人是否已启用 (玩家不是猎人时一定返回 <code>false</code>)
      */
+    @Contract("null -> fail")
     public boolean isHunterEnabled(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -141,6 +153,7 @@ public final class TeamHolder {
      * @param player 玩家实例
      * @return 该猎人是否已启用 (玩家不是猎人时一定返回 <code>false</code>)
      */
+    @Contract("null -> fail")
     public boolean isHunterEnabled(String player) {
         throw new UnsupportedOperationException();
     }
@@ -168,6 +181,7 @@ public final class TeamHolder {
      *
      * @param player 将被启用的猎人
      */
+    @Contract("null -> fail")
     public void addEnabledHunter(Player player) throws IllegalStateException {
         throw new UnsupportedOperationException();
     }
@@ -177,6 +191,7 @@ public final class TeamHolder {
      *
      * @param player 将被启用的猎人
      */
+    @Contract("null -> fail")
     public void addEnabledHunter(String player) throws IllegalStateException {
         throw new UnsupportedOperationException();
     }
@@ -195,6 +210,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void addOutPlayer(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -204,6 +220,7 @@ public final class TeamHolder {
      *
      * @param player 玩家实例
      */
+    @Contract("null -> fail")
     public void removeOutPlayer(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -213,6 +230,7 @@ public final class TeamHolder {
      *
      * @param player 玩家名
      */
+    @Contract("null -> fail")
     public void addOutPlayer(String player) {
         throw new UnsupportedOperationException();
     }
@@ -222,6 +240,7 @@ public final class TeamHolder {
      *
      * @param player 玩家名
      */
+    @Contract("null -> fail")
     public void removeOutPlayer(String player) {
         throw new UnsupportedOperationException();
     }
@@ -231,6 +250,7 @@ public final class TeamHolder {
      *
      * @param player 将被禁用的猎人的玩家实例
      */
+    @Contract("null -> fail")
     public void removeEnabledHunter(Player player) {
         throw new UnsupportedOperationException();
     }
@@ -240,6 +260,7 @@ public final class TeamHolder {
      *
      * @param player 将被禁用的猎人的玩家名
      */
+    @Contract("null -> fail")
     public void removeEnabledHunter(String player) {
         throw new UnsupportedOperationException();
     }

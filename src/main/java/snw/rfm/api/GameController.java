@@ -11,6 +11,7 @@
 package snw.rfm.api;
 
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 import snw.rfm.RunForMoney;
 import snw.rfm.tasks.ScheduledRFMTask;
@@ -95,6 +96,7 @@ public interface GameController {
      * @since 1.3.0
      */
     @Nullable
+    @Contract("_, null -> fail")
     ScheduledRFMTask registerRemainingTimeEvent(int remaining, Runnable runnable);
 
     /**
@@ -112,6 +114,7 @@ public interface GameController {
      * @since 1.5.1
      */
     @Nullable
+    @Contract("_, null -> fail")
     ScheduledRFMTask registerRemainingSecondEvent(int remaining, Runnable runnable);
 
     /**
@@ -121,6 +124,7 @@ public interface GameController {
      * @return 操作是否成功，如果返回 false ，则该玩家可能不在线或仍存活
      * @since 1.3.0
      */
+    @Contract("null -> fail")
     boolean respawn(Player player);
 
     /**
@@ -151,6 +155,7 @@ public interface GameController {
      * @throws IllegalStateException 当玩家在此方法被调用前就已被淘汰时，或玩家是猎人时引发
      * @since 1.4.0
      */
+    @Contract("null -> fail")
     void forceOut(Player player) throws IllegalStateException;
 
     /**
@@ -169,6 +174,7 @@ public interface GameController {
      * @param player 玩家实例
      * @return 此玩家拥有的硬币数量
      */
+    @Contract("null -> fail")
     double getMoney(Player player);
 
     /**
@@ -177,6 +183,7 @@ public interface GameController {
      * @param player 玩家名称
      * @param amount 此玩家将拥有的硬币数量
      */
+    @Contract("null, _ -> fail")
     void setMoney(Player player, double amount);
 
     /**
@@ -185,6 +192,7 @@ public interface GameController {
      * @param player 玩家名称
      * @return 此玩家拥有的硬币数量
      */
+    @Contract("null -> fail")
     double getMoney(String player);
 
     /**
@@ -193,6 +201,7 @@ public interface GameController {
      * @param player 玩家名称
      * @param amount 此玩家将拥有的硬币数量
      */
+    @Contract("null, _ -> fail")
     void setMoney(String player, double amount);
 
     /**
@@ -202,6 +211,7 @@ public interface GameController {
      * @param coin 将增加的 B币 数量 (可以为负值从而实现扣钱)
      * @since 1.4.0
      */
+    @Contract("null, _ -> fail")
     void addMoney(Player player, double coin);
 
     /**
@@ -211,6 +221,7 @@ public interface GameController {
      * @param coin 将增加的 B币 数量 (可以为负值从而实现扣钱)
      * @since 1.4.0
      */
+    @Contract("null, _ -> fail")
     void addMoney(String player, double coin);
 
     /**

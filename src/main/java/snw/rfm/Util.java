@@ -81,7 +81,7 @@ public final class Util {
      * @param loc 位置字符串
      * @return 解析后的位置
      */
-    public static Location parseXYZStringIntoLocation(@NotNull String loc) {
+    public static Location parseXYZStringIntoLocation(@NotNull String loc) throws NumberFormatException {
         Validate.notNull(loc);
         String[] loc_split = loc.split(" ");
         return new Location(Bukkit.getWorld("world"), Integer.parseInt(loc_split[0]), Integer.parseInt(loc_split[1]), Integer.parseInt(loc_split[2]));
