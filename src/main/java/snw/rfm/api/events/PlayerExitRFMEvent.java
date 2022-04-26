@@ -45,8 +45,6 @@ public final class PlayerExitRFMEvent extends PlayerEvent implements Cancellable
 
     /**
      * 获取该玩家最终能获得的 B币 。
-     * <p>
-     * <i>因需要插件配置文件的配合，故 API 无法提供此方法的实现。</i>
      *
      * @param multiplier 决定获得的数据是否被处理过 (即是否受到插件配置 "coin_multiplier_on_be_caught" 的影响)
      * @return 该玩家最终获得的 B币 数量。
@@ -58,7 +56,7 @@ public final class PlayerExitRFMEvent extends PlayerEvent implements Cancellable
     /**
      * 设置该玩家最终能获得的 B币 。
      * <p>
-     * <b>注意，此方法被成功调用后，无论向 {@link PlayerExitRFMEvent#getCoinEarned(boolean)} 方法传递 <code>true</code> 还是 <code>false</code> ，返回值都始终会是提供给此方法的值。</b>
+     * <b>注意，此方法被成功调用后，{@link PlayerExitRFMEvent#getCoinEarned(boolean)} 方法始终返回提供给此方法的值。</b>
      *
      * @param coin 玩家将获得的 B币 。
      * @throws IllegalArgumentException 当 <code>coin</code> 是负数或是 NaN 时抛出

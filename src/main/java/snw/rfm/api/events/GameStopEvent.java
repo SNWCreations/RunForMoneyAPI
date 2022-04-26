@@ -10,7 +10,6 @@
 
 package snw.rfm.api.events;
 
-import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,9 @@ public final class GameStopEvent extends Event {
      * 获取获胜者集合。
      *
      * @return 获胜者集合。但返回的集合可能不包含任何元素 (当所有玩家均被捕时可能产生此情况) 。
+     * @deprecated 此事件发生时，您应该调用 {@link TeamHolder#getRunners()} 方法。此方法的本质也是这样。
      */
+    @Deprecated
     @NotNull
     public Set<String> getWinner() {
         return TeamHolder.getInstance().getRunners();

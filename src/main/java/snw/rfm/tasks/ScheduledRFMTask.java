@@ -42,7 +42,7 @@ public interface ScheduledRFMTask {
     /**
      * 立刻执行此计划任务。
      * <p>
-     * 此实例的 {@link ScheduledRFMTask#isExecuted()} 方法的返回值在调用此方法后一定返回 true 。
+     * 此实例的 {@link ScheduledRFMTask#isExecuted()} 方法在调用此方法后一定返回 true 。
      *
      * @throws IllegalStateException 当此计划任务已经被执行过一次 (即此方法之前已被调用) 但此方法又一次被调用时产生
      */
