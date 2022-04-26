@@ -31,7 +31,7 @@ public final class ItemRegistry {
      *
      * @param name 将被注册的内部名称
      * @param item 将被注册的道具实例
-     * @throws IllegalArgumentException 当内部名称不是由纯英文和数字时引发
+     * @throws IllegalArgumentException 当内部名称有空格时引发
      * @throws IllegalStateException 提供的内部名称或道具实例已被注册时引发
      * @since 插件 v1.1.8
      */
@@ -102,7 +102,7 @@ public final class ItemRegistry {
     /**
      * 用内部名称获取某个道具物品的实例。
      * @param name 目标物品的内部名称
-     * @return 目标物品 (可能因不存在返回 null)
+     * @return 目标物品<b>的克隆</b> (可能因不存在返回 null)
      */
     @Nullable
     public static ItemStack getRegisteredItemByName(@NotNull String name) {
