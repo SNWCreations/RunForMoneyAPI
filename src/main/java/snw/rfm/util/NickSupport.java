@@ -34,6 +34,8 @@ public final class NickSupport {
 
     /**
      * 获取某玩家的别称。
+     * <p>
+     * <b>当你的插件想要通告信息时，所有的玩家名应该尽可能使用其别称。</b>
      *
      * @param playerName 某玩家的文件名 (区分大小写)
      * @return 此玩家的别称 (如果有), 否则原样返回。

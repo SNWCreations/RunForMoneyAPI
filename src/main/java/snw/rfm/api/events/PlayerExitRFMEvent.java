@@ -34,7 +34,7 @@ public final class PlayerExitRFMEvent extends PlayerEvent implements Cancellable
     /**
      * 获取弃权者。
      *
-     * @return 弃权者
+     * @return 弃权者的玩家实例
      * @deprecated 严格意义上来说，这应该是一个 {@link PlayerEvent} 的子类，所以您应该使用 {@link PlayerEvent#getPlayer()} 方法。但此方法仍然可用，返回值与其相同。
      */
     @Deprecated

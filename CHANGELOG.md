@@ -10,7 +10,9 @@
 * 向 HunterCatchPlayerEvent 增加了 isModified 方法。
 * 向 PlayerExitRFMEvent 增加了 setCoinEarned, isModified 方法。
 * 现在 PlayerExitRFMEvent 可以被取消了。
-* 补充了部分方法的说明。
+* 增加了 LanguageSupport, NickSupport 类。
+* 从插件本体复制了 TeamHolder 所拥有的大部分方法。
+* 修订了部分方法的说明。
 
 ## v1.5.0
 
