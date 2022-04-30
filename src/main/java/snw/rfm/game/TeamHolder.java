@@ -201,7 +201,7 @@ public final class TeamHolder {
      *
      * @param player 玩家名
      */
-    public void setGiveUpPlayer(@Nullable String player) {
+    public void setGiveUpPlayer(String player) {
         throw new UnsupportedOperationException();
     }
 
@@ -302,7 +302,7 @@ public final class TeamHolder {
      *
      * @return 弃权者的游戏名称
      */
-    public String getGiveUpPlayer() {
+    public Set<String> getGiveUpPlayer() {
         throw new UnsupportedOperationException();
     }
 
