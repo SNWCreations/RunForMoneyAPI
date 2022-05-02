@@ -175,7 +175,7 @@ public interface GameController {
      * @return 此玩家拥有的硬币数量
      */
     @Contract("null -> fail")
-    double getMoney(Player player);
+    Double getMoney(Player player);
 
     /**
      * 设置某玩家拥有的硬币数量。
@@ -193,7 +193,7 @@ public interface GameController {
      * @return 此玩家拥有的硬币数量
      */
     @Contract("null -> fail")
-    double getMoney(String player);
+    Double getMoney(String player);
 
     /**
      * 设置某玩家拥有的硬币数量。
