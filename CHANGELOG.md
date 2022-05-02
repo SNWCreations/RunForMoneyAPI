@@ -3,6 +3,7 @@
 ## v1.6.0
 
 * 从插件本体同步了 TeamHolder 类的方法，部分仅内部可用的方法没有添加。
+* 从插件本体同步了 LanguageSupport, NickSupport 类。
 * 现在 TeamHolder#getGiveUpPlayer 方法不再有效，且已经被弃用，请改用 TeamHolder#getGiveUpPlayers 。
 * 增加了 TeamHolder#addGiveUpPlayer 方法，效果与 TeamHolder#setGiveUpPlayer 方法一致。
 * TeamHolder#setGiveUpPlayer 现已被弃用。
