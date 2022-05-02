@@ -197,10 +197,12 @@ public final class TeamHolder {
     }
 
     /**
-     * 设置某玩家为弃权者。在 <code>{@link TeamHolder#getGiveUpPlayer()} != null</code> 时调用此方法无效。
+     * 设置某玩家为弃权者。
      *
      * @param player 玩家名
+     * @deprecated 此方法已经更名为 {@link TeamHolder#addGiveUpPlayer(String)} ，因为自插件 v1.8.4 开始支持多玩家弃权。
      */
+    @Deprecated
     public void setGiveUpPlayer(String player) {
         throw new UnsupportedOperationException();
     }
@@ -301,8 +303,28 @@ public final class TeamHolder {
      * 获取弃权者的游戏名称。
      *
      * @return 弃权者的游戏名称
+     * @deprecated 此方法自插件 v1.8.4 开始不再有效，并始终抛出 {@link UnsupportedOperationException} 。因为自插件 v1.8.4 开始允许多玩家弃权。
      */
-    public Set<String> getGiveUpPlayer() {
+    @Deprecated
+    public String getGiveUpPlayer() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * 返回所有已弃权玩家的名称。
+     *
+     * @return 所有已弃权玩家的名称
+     */
+    public Set<String> getGiveUpPlayers() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * 使某玩家被当做已弃权玩家。
+     *
+     * @param player 此玩家的游戏名
+     */
+    public void addGiveUpPlayer(String player) {
         throw new UnsupportedOperationException();
     }
 

@@ -2,8 +2,10 @@
 
 ## v1.6.0
 
-* **!破坏性更改!** 将 TeamHolder#getGiveUpPlayer 方法的返回值改为 Set<String> 。因为自插件 v1.8.4 开始允许多个玩家弃权。
 * 从插件本体同步了 TeamHolder 类的方法，部分仅内部可用的方法没有添加。
+* 现在 TeamHolder#getGiveUpPlayer 方法不再有效，且已经被弃用，请改用 TeamHolder#getGiveUpPlayers 。
+* 增加了 TeamHolder#addGiveUpPlayer 方法，效果与 TeamHolder#setGiveUpPlayer 方法一致。
+* TeamHolder#setGiveUpPlayer 现已被弃用。
 
 ## v1.5.1
 
