@@ -174,6 +174,7 @@ public interface GameController {
      * @param player 玩家实例
      * @return 此玩家拥有的硬币数量
      */
+    @Nullable
     @Contract("null -> fail")
     Double getMoney(Player player);
 
@@ -192,6 +193,7 @@ public interface GameController {
      * @param player 玩家名称
      * @return 此玩家拥有的硬币数量
      */
+    @Nullable
     @Contract("null -> fail")
     Double getMoney(String player);
 
